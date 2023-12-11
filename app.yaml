@@ -1,2 +1,19 @@
-runtime: nodejs16
-service: backend
+runtime: nodejs14
+
+env_variables:
+  MYSQL_HOST: "34.101.110.63"
+  MYSQL_USER: "root"
+  MYSQL_PASSWORD: "loginapi123"
+  MYSQL_DATABASE: "login_api"
+  JWT_SECRET_KEY: "secret_key"
+
+instance_class: F2
+
+automatic_scaling:
+  target_cpu_utilization: 0.65
+  min_instances: 1
+  max_instances: 10
+
+handlers:
+  - url: /.*
+    script: auto
