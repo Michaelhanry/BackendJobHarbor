@@ -1,0 +1,12 @@
+runtime: nodejs20
+service: jobharbor-api
+
+env_variables:
+  NODE_ENV: production
+  PORT: 8080
+  VARIABLE_NAME: value
+
+handlers:
+  - url: /.*
+    script: auto
+    secure: always
